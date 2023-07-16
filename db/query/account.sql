@@ -11,7 +11,7 @@ INSERT INTO accounts (
 SELECT * FROM accounts
 WHERE id = $1 LIMIT 1;
 
--- name: ListAccount :one
+-- name: ListAccounts :one
 SELECT * FROM accounts
 ORDER BY id
 LIMIT $1
@@ -22,6 +22,7 @@ UPDATE accounts
 SET balance = $2
 WHERE id = $1
 RETURNING *;
+
 
 -- name: DeleteAccount :exec
 DELETE FROM accounts 
